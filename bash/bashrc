@@ -1,0 +1,14 @@
+export PS1="[\D{%H:%M:%S}] \u@\h[\j] \w\n$ "
+
+findpy() {
+    find . -name '*.py' | xargs grep $@
+}
+
+findweb() {
+    find . -name '*.js' -o -name '*.html' -o -name '*.htm' -o -name '*.css' | xargs grep $@
+}
+
+findeb() {
+    find . -name '*.eb' | xargs grep $@
+}
+
