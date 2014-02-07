@@ -7,14 +7,17 @@ regentags() {
 }
 
 findpy() {
-    find . -name '*.py' -print0 | xargs -0 grep $@
+    find . \( -name '*.py' -name '*.pyx' \) -exec grep $@ {} \;
 }
 
 findweb() {
-    find . -name '*.js' -o -name '*.html' -o -name '*.htm' -o -name '*.css' -print0| xargs -0 grep $@
+    find . \( -name '*.js' -o -name '*.html' -o -name '*.htm' -o -name '*.css' \) -exec grep $@ {} \;
 }
 
 findeb() {
-    find . -name '*.eb' -print0 | xargs -0 grep $@
+    find . -name '*.eb' -exec grep $@ {} \;
 }
 
+findc() {
+    find . \( -name '*.c' -o -name '*.cc' -o -name '*.h' -o -name '*.hh' \) -exec grep $@ {} \;
+}
