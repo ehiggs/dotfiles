@@ -131,3 +131,9 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+nnoremap <leader>/ :noh<cr>
+
+" Column wrapping
+set colorcolumn=80
+set textwidth=80
