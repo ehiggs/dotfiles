@@ -1,0 +1,65 @@
+# C binaries
+*.o
+*.so
+*.a
+
+# Python
+*.py[cod]
+__pycache__/
+dist/
+build/
+develop-eggs/
+eggs/
+*.egg
+*.egg-info/
+.tox/
+htmlcov/
+coverage.xml
+.coverage
+.cache
+nosetests.xml
+
+
+# Python Sphinx
+docs/_build/
+
+# Emacs backup files.
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Emacs Org-mode
+.org-id-locations
+*_archive
+
+# Emacs flymake-mode
+*_flymake.*
+
+# eshell files
+/eshell/history
+/eshell/lastdir
+
+# Vim backup files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# svn
+.svn/
+
+#CVS
+/CVS/*
+*/CVS/*
+.cvsignore
+*/.cvsignore
+
+# Log files
+*.log
