@@ -6,18 +6,27 @@ regentags() {
     (cd $srcdir && ctags --recurse -o $outfile --exclude="*.(html|css)")
 }
 
+# Find strings in Python projects.
 findpy() {
     find . \( -name '*.py' -o -name '*.pyx' \) -type f -print0 | xargs -0 grep $@
 }
 
+# Find strings in Web projects.
 findweb() {
     find . \( -name '*.js' -o -name '*.html' -o -name '*.htm' -o -name '*.css' \) -type f -print0 | xargs -0 grep  $@
 }
 
+# Find strings in EasyBuild scripts.
 findeb() {
     find . -name '*.eb' -type f -print0 | xargs -0 grep $@
 }
 
+# Find strings in C or C++ projects.
 findc() {
-    find . \( -name '*.c' -o -name '*.cc' -o -name '*.cxx' -o -name '*.h' -o -name '*.hh' \) -type f -print0 | xargs -0 grep $@
+    find . \( -name '*.c' -o -name '*.cc' -o -name '*.cxx' -o -name '*.cpp' -o -name '*.h' -o -name '*.hh' \) -type f -print0 | xargs -0 grep $@
+}
+
+# Something to pipe to find commands to ignore build directories.
+nobuild() {
+    grep -v 'tox/' | grep -v 'build/'
 }
