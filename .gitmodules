@@ -1,9 +1,6 @@
 [submodule "vim/vim/bundle/vim-go"]
 	path = vim/vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "vim/vim/bundle/vim-sensible"]
-	path = vim/vim/bundle/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
 [submodule "vim/vim/bundle/vim-fugitive"]
 	path = vim/vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
