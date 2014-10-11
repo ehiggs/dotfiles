@@ -26,6 +26,10 @@ findc() {
     find . \( -name '*.c' -o -name '*.cc' -o -name '*.cxx' -o -name '*.cpp' -o -name '*.h' -o -name '*.hh' \) -type f -print0 | xargs -0 grep $@
 }
 
+findjava() {
+    find . \( -name '*.java' -o -name '*.scala' \) -type f -print0 | xargs -0 grep $@
+}
+
 # Find strings in files of any file type; e.g. f go blah -> find in .go files.
 f() {
     filetype=$1; shift
@@ -36,3 +40,5 @@ f() {
 nobuild() {
     grep -v 'tox/' | grep -v 'build/'
 }
+
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip'
