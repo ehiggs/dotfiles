@@ -63,3 +63,6 @@ Session.vim
 
 # Log files
 *.log
+
+# Java files
+*.class
