@@ -3,7 +3,13 @@ export PS1="[\D{%H:%M:%S}] \u@\h[\j] \w\n$ "
 regentags() {
     srcdir=~/src
     outfile=${1:-$srcdir/tags}
-    (cd $srcdir && ctags --recurse -o $outfile --exclude="*.(html|css)" --exclude="*/.tox/*" --exclude="*/build/*")
+    (cd $srcdir && ctags --recurse -o $outfile \
+        --exclude="*.(html|css)" \
+        --exclude="*/.tox/*" \
+        --exclude="*/build/*" \
+        --exclude="download/*" \
+        --exclude="archive/*" \
+        )
 }
 
 # Find strings in Python projects.

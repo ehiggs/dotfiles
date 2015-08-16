@@ -140,3 +140,4 @@ set colorcolumn=80
 set textwidth=80
 
 let g:syntastic_python_pylint_post_args='--disable=line-too-long,bad-builtin,invalid-name'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
