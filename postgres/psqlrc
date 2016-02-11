@@ -1,0 +1,6 @@
+\pset null 'NULL'
+\encoding latin1
+\set PROMPT1 '%n@%M:%>%x %/# '
+\pset pager always
+\timing on
+\set qstats92 'SELECT usename, datname, left(query,100) || ''...'' As query FROM pg_stat_activity WHERE state != ''idle'' ;'
