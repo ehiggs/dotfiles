@@ -1,9 +1,10 @@
+#!/bin/bash
 export PS1="[\D{%H:%M:%S}] \u@\h[\j] \w\n$ "
 
 regentags() {
     srcdir=~/src
     outfile=${1:-$srcdir/tags}
-    (cd $srcdir && ctags --recurse -o $outfile \
+    (cd $srcdir && ctags --recurse -o "$outfile" \
         --exclude="*.(html|css)" \
         --exclude="*/.tox/*" \
         --exclude="*/build/*" \
@@ -14,32 +15,32 @@ regentags() {
 
 # Find strings in Python projects.
 findpy() {
-    find . \( -name '*.py' -o -name '*.pyx' \) -type f -print0 | xargs -0 grep "$@"
+    find . \( -name '*.py' -o -name '*.pyx' \) -type f -exec grep "$@" {} +
 }
 
 # Find strings in Web projects.
 findweb() {
-    find . \( -name '*.js' -o -name '*.html' -o -name '*.htm' -o -name '*.css' \) -type f -print0 | xargs -0 grep  "$@"
+    find . \( -name '*.js' -o -name '*.html' -o -name '*.htm' -o -name '*.css' \) -type f -exec grep  "$@" {} +
 }
 
 # Find strings in EasyBuild scripts.
 findeb() {
-    find . -name '*.eb' -type f -print0 | xargs -0 grep "$@"
+    find . -name '*.eb' -type f -exec grep "$@" {} +
 }
 
 # Find strings in C or C++ projects.
 findc() {
-    find . \( -name '*.c' -o -name '*.cc' -o -name '*.cxx' -o -name '*.cpp' -o -name '*.cxx' -o -name '*.h' -o -name '*.hh' \) -type f -print0 | xargs -0 grep "$@"
+    find . \( -name '*.c' -o -name '*.cc' -o -name '*.cxx' -o -name '*.cpp' -o -name '*.cxx' -o -name '*.h' -o -name '*.hh' \) -type f -exec grep "$@" {} +
 }
 
 findjava() {
-    find . \( -name '*.java' -o -name '*.scala' \) -type f -print0 | xargs -0 grep "$@"
+    find . \( -name '*.java' -o -name '*.scala' \) -type f -exec grep "$@" +
 }
 
 # Find strings in files of any file type; e.g. f go blah -> find in .go files.
 f() {
     filetype=$1; shift
-    find . -name \*.${filetype} -type f -print0 | xargs -0 grep "$@"
+    find . -name \*.${filetype} -type f -exec grep "$@" {} +
 }
 
 # Something to pipe to find commands to ignore build directories.
