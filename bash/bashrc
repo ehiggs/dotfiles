@@ -34,7 +34,7 @@ findc() {
 }
 
 findjava() {
-    find . \( -name '*.java' -o -name '*.scala' \) -type f -exec grep "$@" +
+    find . \( -name '*.java' -o -name '*.scala' \) -type f -exec grep "$@" {} +
 }
 
 # Find strings in files of any file type; e.g. f go blah -> find in .go files.
