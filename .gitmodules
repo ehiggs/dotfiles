@@ -19,3 +19,6 @@
 [submodule "vim/vim/bundle/vim-racer"]
 	path = vim/vim/bundle/vim-racer
 	url = https://github.com/racer-rust/vim-racer.git
+[submodule "bash/contrib/bash-git-prompt"]
+	path = bash/contrib/bash-git-prompt
+	url = https://github.com/magicmonty/bash-git-prompt.git
