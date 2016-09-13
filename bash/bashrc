@@ -2,9 +2,9 @@
 
 locate_source() {
   # Find our actual source directory. (http://stackoverflow.com/a/246128)
-  SOURCE="${BASH_SOURCE[0]}"
+  local SOURCE="${BASH_SOURCE[0]}"
   while [ -h "$SOURCE" ]; do
-    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    local DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
     SOURCE="$(readlink "$SOURCE")"
     [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
   done
@@ -12,8 +12,8 @@ locate_source() {
 }
   
 regentags() {
-    srcdir=~/src
-    outfile=${1:-$srcdir/tags}
+    local srcdir=~/src
+    local outfile=${1:-$srcdir/tags}
     (cd $srcdir && ctags --recurse -o "$outfile" \
         --exclude="*.(html|css)" \
         --exclude="*/.tox/*" \
@@ -67,6 +67,6 @@ GIT_PROMPT_ONLY_IN_REPO=1
 GIT_PROMPT_SHOW_UNTRACKED_FILES=no
 GIT_PROMPT_START="${PROMPT}"
 GIT_PROMPT_END="\n$ "
-source $__this/contrib/bash-git-prompt/gitprompt.sh
+source "$__this"/contrib/bash-git-prompt/gitprompt.sh
 
 alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test100.zip'
