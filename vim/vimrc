@@ -141,7 +141,7 @@ set textwidth=80
 
 let g:syntastic_python_pylint_post_args='--disable=line-too-long,bad-builtin,invalid-name'
 let g:syntastic_cpp_compiler_options = '-std=c++11'
-let g:racer_cmd = expand("$HOME/.multirust/toolchains/nightly/cargo/bin/racer")
+let g:racer_cmd = expand("$HOME/.cargo/bin/racer")
 let $RUST_SRC_PATH = expand("$HOME/src/download/rust/src/")
 
 "vimdiff colours
