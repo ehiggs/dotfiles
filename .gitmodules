@@ -22,3 +22,6 @@
 [submodule "bash/contrib/bash-git-prompt"]
 	path = bash/contrib/bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule "vim/vim/bundle/thrift.vim"]
+	path = vim/vim/bundle/thrift.vim
+	url = https://github.com/solarnz/thrift.vim
